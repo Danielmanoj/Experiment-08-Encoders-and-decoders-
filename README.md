@@ -55,23 +55,69 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+
+1.Create a project with required entities.
+
+2.Create a module along with respective file name for both Multiplexer and De-multiplexer.
+
+3.Run the module and get the respective RTL outputs.
+
+4.Create university program(VWF) for getting timing diagram.
+
+5.Give the respective inputs for timing diagram and obtain the results.
+
 
 
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: MANOJ G
+RegisterNumber:  212222240060
+```
 
+
+## Program for Encoder
+```
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+
+
+## Program for Decoder
+```
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a&~b&~c);
+assign d1=(~a&~b&c);
+assign d2=(~a&b&~c);
+assign d3=(~a&b&c);
+assign d4=(a&~b&~c);
+assign d5=(a&~b&c);
+assign d6=(a&b&~c);
+assign d7=(a&b&c);
+endmodule
+```
 
 
 
 
 
 ### RTL LOGIC  
+## Encoder
+
+![image](https://github.com/Danielmanoj/Experiment-08-Encoders-and-decoders-/assets/69635071/128039f5-cd1d-471e-bb9a-e8b2e622f360)
+
+
+## Decoder
+
+![image](https://github.com/Danielmanoj/Experiment-08-Encoders-and-decoders-/assets/69635071/bb170bde-08f6-4c7f-b821-dc1cd7a6f386)
 
 
 
@@ -82,11 +128,26 @@ RegisterNumber:
 
 ### TIMING DIGRAMS  
 
+## Encoder
+![image](https://github.com/Danielmanoj/Experiment-08-Encoders-and-decoders-/assets/69635071/679e23e3-2ff0-48c6-b909-06ac010e2648)
+
+
+## Decoder
+
+![image](https://github.com/Danielmanoj/Experiment-08-Encoders-and-decoders-/assets/69635071/8aab8e13-2dc2-457a-aadb-676cb5f97838)
 
 
 
 
 ### TRUTH TABLE 
+## Encoder
+![image](https://github.com/Danielmanoj/Experiment-08-Encoders-and-decoders-/assets/69635071/3a724ddb-753a-420f-afe8-d531df3a1a24)
+
+
+## Decoder
+
+![image](https://github.com/Danielmanoj/Experiment-08-Encoders-and-decoders-/assets/69635071/b163e48a-1e01-48d7-a45b-041ea42cb532)
+
 
 
 
@@ -94,3 +155,5 @@ RegisterNumber:
 
 
 ### RESULTS 
+
+Thus the program to desing encoder and decoder is done.
